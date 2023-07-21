@@ -49,8 +49,9 @@ def run():
 
     # https://pypi.org/project/schedule/
     # https://schedule.readthedocs.io/en/stable/examples.html
-    # weibo_job: 每一小时执行
-    schedule.every(ONE_HOUR_IN_SECONDS).seconds.do(run_threaded, do_weibo_job)
+    # weibo_job: 00, 30分执行
+    schedule.every().hour.at(':00').do(run_threaded, do_weibo_job)
+    schedule.every().hour.at(':30').do(run_threaded, do_weibo_job)
     # fish_job: 00, 30分执行
     schedule.every().hour.at(':00').do(run_threaded, do_fish_job)
     schedule.every().hour.at(':30').do(run_threaded, do_fish_job)

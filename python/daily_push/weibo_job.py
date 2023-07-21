@@ -101,8 +101,8 @@ def send_weibo_to_ding_talk(name, content):
     if is_top and 1 == is_top:
         log('置顶微博, 跳过')
         return
-    if now - timestamp > ONE_HOUR_IN_SECONDS:
-        log('前1小时后内容, 跳过')
+    if now - timestamp > JOB_IN_SECONDS:
+        log('已推送内容, 跳过')
         return
 
     ding_talk_weibo_text = '#### 【' + name + '的微博】\n\n' + created_at + '来自' + source + '\n\n\n\n'
@@ -152,8 +152,8 @@ def save_weibo_by_markdown(f, filename, name, content):
     if is_top and 1 == is_top:
         log('置顶微博, 跳过')
         return
-    if now - timestamp > ONE_HOUR_IN_SECONDS:
-        log('前1小时后内容, 跳过')
+    if now - timestamp > JOB_IN_SECONDS:
+        log('已推送内容, 跳过')
         return
 
     # 写入内容
