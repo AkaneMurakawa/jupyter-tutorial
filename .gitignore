@@ -1,3 +1,5 @@
 .*
 !.gitignore
 ijava/
+log.*
+__pycache__
