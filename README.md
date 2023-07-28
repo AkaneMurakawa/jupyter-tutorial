@@ -2,10 +2,28 @@
 
 Welcome to the Project Jupyter documentation site. Jupyter is a large umbrella project that covers many different software offerings and tools, including the popular Jupyter Notebook and JupyterLab web-based notebook authoring and editing applications. The Jupyter project and its subprojects all center around providing tools (and standards) for interactive computing with computational notebooks.
 
-## Docker部署
+## Jupyter教程
+[http://www.codebaoku.com/jupyter/jupyter-index.html](http://www.codebaoku.com/jupyter/jupyter-index.html)
+
+Jupyter是一个可视化和交互式的Web集成开发环境。
+
+## 部署
+
+### Docker方式部署
 
 ```bash
 docker run -d -it --name jupyter -p 8888:8888 -v /usr/local/data/jupyter:/home/jovyan jupyter/minimal-notebook
+```
+
+### Anaconda方式部署
+下载[Anaconda](https://www.anaconda.com/download-success)，内置了Jupyter
+
+### pip方式部署
+
+```bash
+pip3 install jupyter
+# 启动
+jupyter notebook
 ```
 
 ### 设置登录密码
